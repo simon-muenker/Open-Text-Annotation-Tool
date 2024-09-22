@@ -14,12 +14,7 @@
   },
   {
     "label": "sentiment",
-    "options": [
-      "None",
-      "Neutral",
-      "Positiv",
-      "Negativ"
-    ],
+    "options": ["None", "Neutral", "Positiv", "Negativ"],
     "columnWidth": "w-48"
   }
 ]

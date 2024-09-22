@@ -2,27 +2,32 @@
 import Headline from "@atoms/Headline.astro";
 import Paragraph from "@atoms/Paragraph.astro";
 
-import surveyItems from '@data/survey.json';
+import surveyItems from "@data/survey.json";
 import SurveyField from "@components/SurveyField.astro";
 ---
 
 <Headline>Step 1: Fill in your socio-demographic details</Headline>
 
 <Paragraph>
-    Please provide us with your genuine data. If you like not to answer a question, leave the field's value with the
-    default None. Of course, all your statements are voluntary and remain anonymous. You may find some options not
-    exactly fitting your situation. If that is the case, choose the closest possible value.
+  Please provide us with your genuine data. If you like not to answer a
+  question, leave the field's value with the default None. Of course, all your
+  statements are voluntary and remain anonymous. You may find some options not
+  exactly fitting your situation. If that is the case, choose the closest
+  possible value.
 </Paragraph>
 
 <Paragraph>
-    Note that we simplified the options regarding questions of gender, origin, and religion. That allows for a
-    streamlined evaluation and is not meant to be discriminating. If you have ethical concerns, <a
-        class="font-medium text-blue-600 underline"
-        href="mailto:s2simuen@uni-trier.de?subject=SoSec Survey - Ethical Concerns">contact us directly.</a>
+  Note that we simplified the options regarding questions of gender, origin, and
+  religion. That allows for a streamlined evaluation and is not meant to be
+  discriminating. If you have ethical concerns, <a
+    class="font-medium text-blue-600 underline"
+    href="mailto:s2simuen@uni-trier.de?subject=SoSec Survey - Ethical Concerns"
+    >contact us directly.</a
+  >
 </Paragraph>
 
-<div class="my-8 grid grid-cols-2 gap-x-6 gap-y-12 md:grid-cols-4 md:gap-x-12 md:gap-y-24 lg:my-12">
-    {surveyItems.map((item) => (
-        <SurveyField {...item}/>
-    ))}
+<div
+  class="my-8 grid grid-cols-2 gap-x-6 gap-y-12 md:grid-cols-4 md:gap-x-12 md:gap-y-24 lg:my-12"
+>
+  {surveyItems.map((item) => <SurveyField {...item} />)}
 </div>
