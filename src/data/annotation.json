@@ -1,0 +1,25 @@
+[
+  {
+    "label": "topic",
+    "options": [
+      "None",
+      "Nicht zuordenbar",
+      "Wirtschaft",
+      "Migration",
+      "Demokratie",
+      "Ukraineunterstützung",
+      "Energiewende"
+    ],
+    "columnWidth": "w-64"
+  },
+  {
+    "label": "sentiment",
+    "options": [
+      "None",
+      "Neutral",
+      "Positiv",
+      "Negativ"
+    ],
+    "columnWidth": "w-48"
+  }
+]

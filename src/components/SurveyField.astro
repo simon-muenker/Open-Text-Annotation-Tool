@@ -1,0 +1,18 @@
+---
+interface Props {
+    id: string;
+    label: string;
+    options: Array<string>;
+    description?: string | null;
+}
+
+const { id, label, options, description = null } = Astro.props;
+---
+<div>
+    <label class="block mb-2 font-medium text-slate-700">{ label }</label>
+    <select id={id} class="w-full">
+        <option value="dog">Dog</option>
+        <option value="cat">Cat</option>
+    </select>
+    {description && <span v-if="description" class="block mt-4 text-sm">{ description }</span>}
+</div>
