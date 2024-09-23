@@ -6,7 +6,8 @@
       "@/*": ["src/*"],
       "@data/*": ["src/data/*"],
       "@components/*": ["src/components/*"],
-      "@atoms/*": ["src/components/atoms/*"]
+      "@atoms/*": ["src/components/atoms/*"],
+      "@reactive/*": ["src/components/reactive/*"]
     }
   }
 }

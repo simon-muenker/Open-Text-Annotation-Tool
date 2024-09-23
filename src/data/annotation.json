@@ -9,12 +9,10 @@
       "Demokratie",
       "Ukraineunterstützung",
       "Energiewende"
-    ],
-    "columnWidth": "w-64"
+    ]
   },
   {
     "label": "sentiment",
-    "options": ["None", "Neutral", "Positiv", "Negativ"],
-    "columnWidth": "w-48"
+    "options": ["None", "Neutral", "Positiv", "Negativ"]
   }
 ]

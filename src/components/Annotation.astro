@@ -1,59 +1,9 @@
 ---
-import Headline from "@atoms/Headline.astro";
-import Paragraph from "@atoms/Paragraph.astro";
-
-import AnnotationGuideRow from "@components/AnnotationGuideRow.astro";
+import Selector from "@reactive/Selector.svelte";
 
 import annotationItems from "@data/annotation.json";
 import samples from "@data/samples.json";
 ---
-
-<Headline>Step 2: Annotate the following tweets</Headline>
-
-<Paragraph>
-  We listed a selection of possible ambiguous and polarising tweets below. Your
-  task is annotating them along two dimensions: topic and sentiment. We provide
-  a detailed description for each topic below. Please read them carefully. For
-  the sentiment, your task is to choose between three options: The author's
-  opinion is neutral (<span class="text-slate-600 font-bold">Neutral</span>),
-  positive (<span class="text-slate-600 font-bold">Positiv</span>) or negative (<span
-    class="text-slate-600 font-bold">Negativ</span
-  >) towards the chosen topic. You may encounter tweets with two or more
-  possible topics. Please select the one most prominent in your opinion. Select
-  the label unclassifiable (<span class="text-slate-600 font-bold"
-    >Nicht zuordenbar</span
-  >) if you find a tweet not assignable to any topic.
-</Paragraph>
-
-<table class="border-collapse table-auto max-w-2xl">
-  <tbody>
-    <AnnotationGuideRow
-      definition="The tweet contains concerns about the economic crisis or the personal financial situation."
-      delimitation="The tweet does not blame the whole economic system or specific social groups based on income or social status."
-      name="Wirtschaft"
-    />
-    <AnnotationGuideRow
-      definition="The tweet evaluates the chances and dangers of migration and makes judgmental remarks about migrants or as migrants perceived people."
-      delimitation="The tweet does not evaluate decisions in migration politics or focus on individuals of those groups."
-      name="Migration"
-    />
-    <AnnotationGuideRow
-      definition="The tweet expresses trust or distrust towards the parliament and advocates or rejects the democratic system."
-      delimitation="The tweet does not assess a single political decision, politician, or party; and does not compare parties."
-      name="Demokratie"
-    />
-    <AnnotationGuideRow
-      definition="The tweet states the author’s position on the Russo-Ukrainian war, evaluates economic penalties against Russia, or postulates financial or military support for Ukraine."
-      delimitation="The tweet does not discuss the author’s opinion about the Ukraine war in general and does not evaluate the individual war parties."
-      name="Ukraineunterstützung"
-    />
-    <AnnotationGuideRow
-      definition="The tweets discuss personal concerns about the power supply or energy system transformation."
-      delimitation="The tweet does not evaluate a single energy source, speculate on future technologies, or focus on political decisions."
-      name="Energiewende"
-    />
-  </tbody>
-</table>
 
 <table class="my-8 border-collapse table-auto w-full">
   <thead
@@ -66,16 +16,18 @@ import samples from "@data/samples.json";
   </thead>
   <tbody>
     {
-      samples.map((item) => (
+      samples.map((sample) => (
         <tr class="flex flex-col flex-no wrap sm:table-row bg-slate-100 border-b-8 border-white">
-          <td class="p-6 text-slate-600">{item.text}</td>
+          <td class="p-6 text-slate-600">{sample.text}</td>
 
           {annotationItems.map((item) => (
             <td class="p-6">
-              <select>
-                <option value="dog">Dog</option>
-                <option value="cat">Cat</option>
-              </select>
+              <Selector
+                client:load
+                id={sample.id}
+                options={item.options}
+                storeItem={item.label}
+              />
             </td>
           ))}
         </tr>

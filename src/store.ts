@@ -1,15 +1,7 @@
-import { map } from "nanostores";
+import { map, type PreinitializedMapStore } from "nanostores";
 
-export type SurveyItem = {
-  id: string;
-  response: string;
+export const store: Record<string, PreinitializedMapStore> = {
+  survey: map<Record<string, string>>({}),
+  topic: map<Record<string, string>>({}),
+  sentiment: map<Record<string, string>>({}),
 };
-
-export type AnnotationItem = {
-  id: string;
-  topic: string;
-  sentiment: string;
-};
-
-export const survey = map<Record<number, SurveyItem>>({});
-export const annotations = map<Record<number, AnnotationItem>>({});
