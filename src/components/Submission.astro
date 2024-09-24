@@ -23,31 +23,17 @@
   import { sha1 } from "object-hash";
   import { saveAs } from "file-saver";
 
-  import { store } from "@/store.ts";
+  import { getCollatedStore } from "@/store.ts";
 
   const button = document.getElementById("downloadData");
 
   if (button != null) {
     button.addEventListener("click", () => {
-      let output: Record<string, any> = {
-        annotation: {},
-      };
-
-      for (const [key, value] of Object.entries(store)) {
-        if (key == "survey") {
-          output[key] = value.value;
-        } else {
-          output["annotation"][key] = value.value;
-        }
-      }
-
-      console.debug(output);
-
       saveAs(
-        new Blob([JSON.stringify(output, null, 4)], {
+        new Blob([JSON.stringify(getCollatedStore(), null, 4)], {
           type: "application/json",
         }),
-        Date.now() + sha1(output) + ".json",
+        Date.now() + sha1(getCollatedStore()) + ".json",
       );
     });
   }
