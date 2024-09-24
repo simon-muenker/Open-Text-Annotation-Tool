@@ -8,9 +8,9 @@ interface Props {
 const { name, definition, delimitation } = Astro.props;
 ---
 
-<tr>
-  <td class="text-slate-600 font-bold pr-4">{name}</td>
-  <td class="py-4 text-slate-600 border-b border-slate-200">
+<tr class="text-slate-600">
+  <td class="font-bold pr-4">{name}</td>
+  <td class="py-4 border-b border-slate-200">
     <span class="i-mdi-check-circle align-text-top h-5 w-5 text-green-500"
     ></span>
     {definition}

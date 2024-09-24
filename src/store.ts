@@ -6,7 +6,6 @@ export const store: Record<string, PreinitializedMapStore> = {
   sentiment: map<Record<string, string>>({}),
 };
 
-
 export const getCollatedStore = (): Record<string, any> => {
   let output: Record<string, any> = {
     annotation: {},
@@ -22,4 +21,4 @@ export const getCollatedStore = (): Record<string, any> => {
 
   console.debug(output);
   return output;
-}
+};
