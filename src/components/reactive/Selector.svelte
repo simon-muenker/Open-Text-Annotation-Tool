@@ -5,9 +5,9 @@
   export let options:Array<string>;
   export let storeItem: string;
 
-  let selection: string = "None";
-  store[storeItem].setKey(id, selection);
+  let selection: string = options[0];
 
+  store[storeItem].setKey(id, selection);
   const onChange = () => {
     store[storeItem].setKey(id, selection);
 	}
