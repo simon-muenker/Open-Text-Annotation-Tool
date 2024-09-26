@@ -8,21 +8,21 @@
   >
     <div class="mx-auto max-w-7xl text-center">
       <h1
-        class="py-2 bg-gradient-to-r from-green-300 via-blue-500 to-purple-600 bg-clip-text text-3xl font-extrabold text-transparent md:text-5xl lg:text-6xl 2xl:text-8xl"
+        class="bg-gradient-to-r from-green-300 via-blue-500 to-purple-600 bg-clip-text py-2 text-3xl font-extrabold text-transparent md:text-5xl lg:text-6xl 2xl:text-8xl"
       >
         <slot name="headline" />
       </h1>
 
-      <p class="mx-auto py-4 max-w-4xl md:text-xl leading-relaxed">
+      <p class="mx-auto max-w-4xl py-4 leading-relaxed md:text-xl">
         <slot name="intro" />
       </p>
 
-      <div class="py-8 flex flex-wrap justify-center gap-4">
+      <div class="flex flex-wrap justify-center gap-4 py-8">
         <button
           class="block w-auto rounded-full bg-gradient-to-br from-green-300 via-blue-500 to-purple-600 p-4 text-white"
           id="startSurvey"
         >
-          <span class="i-mdi-arrow-down align-text-top h-10 w-11"></span>
+          <span class="i-mdi-arrow-down h-10 w-11 align-text-top"></span>
         </button>
       </div>
     </div>

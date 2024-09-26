@@ -18,8 +18,7 @@
   bind:value={selection}
   on:change={onChange}
   class="
-    inline-flex cursor-pointer select-none appearance-none w-auto
-    rounded-lg py-2 pl-3 pr-10 text-left shadow-md border-2
+    inline-flex w-auto rounded-lg border-2 text-left shadow-md
     {selection != options[0] ? 'border-emerald-500' : 'border-transparent'}
   "
 >
@@ -27,17 +26,3 @@
     <option value={option}>{option}</option>
   {/each}
 </select>
-
-<style>
-  select {
-    background-image: linear-gradient(45deg, transparent 50%, currentColor 50%),
-      linear-gradient(135deg, currentColor 50%, transparent 50%);
-    background-position:
-      calc(100% - 20px) calc(1px + 50%),
-      calc(100% - 16.1px) calc(1px + 50%);
-    background-size:
-      4px 4px,
-      4px 4px;
-    background-repeat: no-repeat;
-  }
-</style>

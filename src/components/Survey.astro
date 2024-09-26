@@ -4,7 +4,7 @@ import SurveyField from "@components/SurveyField.astro";
 ---
 
 <div
-  class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-x-6 md:gap-x-12 gap-y-12 md:gap-y-24 my-8 lg:my-12"
+  class="my-8 grid grid-cols-1 gap-x-6 gap-y-12 sm:grid-cols-2 md:grid-cols-4 md:gap-x-12 md:gap-y-24 lg:my-12"
 >
   {surveyItems.map((item) => <SurveyField {...item} />)}
 </div>

@@ -13,5 +13,6 @@ export default {
     iconsPlugin({
       collections: getIconCollections(["mdi"]),
     }),
+    require("@tailwindcss/forms"),
   ],
 };

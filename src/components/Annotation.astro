@@ -5,9 +5,9 @@ import annotationItems from "@data/annotation.json";
 import samples from "@data/samples.json";
 ---
 
-<table class="my-8 border-collapse table-auto w-full">
+<table class="my-8 w-full table-auto border-collapse">
   <thead
-    class="hidden sm:table-header-group group bg-gradient-to-r from-lime-300 via-blue-500 to-purple-600 text-white border-b-8 border-white"
+    class="group hidden border-b-8 border-white bg-gradient-to-r from-lime-300 via-blue-500 to-purple-600 text-white sm:table-header-group"
   >
     <tr>
       <th class="p-6"></th>
@@ -17,11 +17,17 @@ import samples from "@data/samples.json";
   <tbody>
     {
       samples.map((sample) => (
-        <tr class="flex flex-col flex-no wrap sm:table-row bg-slate-100 border-b-8 border-white">
-          <td class="p-6 text-slate-600">{sample.text}</td>
+        <tr class="flex flex-col border-b-8 border-white bg-slate-100 sm:table-row">
+          <td class="p-4 text-slate-600 sm:p-6">{sample.text}</td>
 
           {annotationItems.map((item) => (
-            <td class="p-6">
+            <td class="p-4 sm:p-6">
+              <label
+                class="mb-1 block text-xs text-slate-400 sm:hidden"
+                for={sample.id}
+              >
+                {item.label}
+              </label>
               <Selector
                 client:load
                 id={sample.id}
