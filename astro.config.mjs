@@ -11,5 +11,5 @@ import icon from "astro-icon";
 export default defineConfig({
   integrations: [tailwind(), svelte(), icon()],
   site: "https://simon-muenker.github.io",
-  base: "cltrier_annotation",
+  base: "Open-Text-Annotation-Tool",
 });
