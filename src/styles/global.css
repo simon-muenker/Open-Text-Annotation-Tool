@@ -1,0 +1,8 @@
+@import "tailwindcss";
+@plugin "@tailwindcss/forms";
+
+@import "@styles/typography.css";
+
+.gradient {
+    @apply bg-gradient-to-r from-lime-300 via-blue-500 to-purple-600;
+}

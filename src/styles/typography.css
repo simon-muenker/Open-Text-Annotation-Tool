@@ -1,0 +1,13 @@
+@import "tailwindcss";
+
+.sectionheading {
+  @apply my-4 text-4xl font-extrabold lg:my-8;
+}
+
+.sectionparagraph {
+  @apply mb-6 max-w-2xl leading-relaxed text-gray-600;
+}
+
+.divider {
+  @apply mx-auto my-8 h-1 w-4/12 rounded border-0 bg-gray-300 md:my-24;
+}
