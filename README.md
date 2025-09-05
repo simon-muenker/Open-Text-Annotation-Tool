@@ -1,5 +1,7 @@
 # Astro Starter Kit: Minimal
 
+TODO: unify with https://github.com/cl-trier/TWON-Evaluation/tree/main
+
 ```sh
 npm create astro@latest -- --template minimal
 ```
