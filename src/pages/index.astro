@@ -1,11 +1,10 @@
 ---
 import BaseLayout from "@layouts/BaseLayout.astro";
+import Hero from "@layouts/partials/Hero.astro";
 
-import Hero from "@/components/Hero.astro";
-import Survey from "@/components/Survey.astro";
-import Annotation from "@/components/Annotation.astro";
-import AnnotationGuideRow from "@/components/AnnotationGuideRow.astro";
-import Submission from "@/components/Submission.astro";
+import Survey from "@/components/Survey.svelte";
+import Annotation from "@/components/Annotation.svelte";
+import Submission from "@/components/Submission.svelte";
 ---
 
 <BaseLayout title="Open Text-Annotation Tool">
@@ -46,7 +45,7 @@ import Submission from "@/components/Submission.astro";
       >
     </p>
 
-    <Survey />
+    <Survey client:load />
 
     <hr class="divider" />
 
@@ -68,35 +67,7 @@ import Submission from "@/components/Submission.astro";
       >) if you find a tweet not assignable to any topic.
     </p>
 
-    <div class="grid max-w-2xl grid-cols-1 gap-4 sm:grid-cols-2">
-      <AnnotationGuideRow
-        definition="The tweet contains concerns about the economic crisis or the personal financial situation."
-        delimitation="The tweet does not blame the whole economic system or specific social groups based on income or social status."
-        name="Wirtschaft"
-      />
-      <AnnotationGuideRow
-        definition="The tweet evaluates the chances and dangers of migration and makes judgmental remarks about migrants or as migrants perceived people."
-        delimitation="The tweet does not evaluate decisions in migration politics or focus on individuals of those groups."
-        name="Migration"
-      />
-      <AnnotationGuideRow
-        definition="The tweet expresses trust or distrust towards the parliament and advocates or rejects the democratic system."
-        delimitation="The tweet does not assess a single political decision, politician, or party; and does not compare parties."
-        name="Demokratie"
-      />
-      <AnnotationGuideRow
-        definition="The tweet states the author's position on the Russo-Ukrainian war, evaluates economic penalties against Russia, or postulates financial or military support for Ukraine."
-        delimitation="The tweet does not discuss the author's opinion about the Ukraine war in general and does not evaluate the individual war parties."
-        name="Ukraineunterstützung"
-      />
-      <AnnotationGuideRow
-        definition="The tweets discuss personal concerns about the power supply or energy system transformation."
-        delimitation="The tweet does not evaluate a single energy source, speculate on future technologies, or focus on political decisions."
-        name="Energiewende"
-      />
-    </div>
-
-    <Annotation />
+    <Annotation client:load />
 
     <hr class="divider" />
 
@@ -116,6 +87,6 @@ import Submission from "@/components/Submission.astro";
       providers.
     </p>
 
-    <Submission />
+    <Submission client:load />
   </main>
 </BaseLayout>

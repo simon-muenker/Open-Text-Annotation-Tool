@@ -1,0 +1,17 @@
+@import "tailwindcss";
+
+.button {
+  @apply relative mr-2 mb-2 inline-flex cursor-pointer items-center justify-center overflow-hidden rounded-lg bg-gradient-to-br from-lime-300 via-blue-500 to-purple-600 p-0.5 font-medium text-gray-900 focus:ring-4 focus:ring-cyan-200 focus:outline-none;
+}
+
+.button:hover {
+  @apply text-white;
+}
+
+.button span.cutout {
+  @apply relative flex items-center rounded-md bg-white px-5 py-2.5 transition-all duration-75 ease-in;
+}
+
+.button:hover span.cutout {
+  @apply bg-white/0;
+}

@@ -1,5 +1,6 @@
 [
   {
+    "id": "topic",
     "label": "topic",
     "options": [
       "None",
@@ -12,6 +13,7 @@
     ]
   },
   {
+    "id": "sentiment",
     "label": "sentiment",
     "options": ["None", "Neutral", "Positiv", "Negativ"]
   }
