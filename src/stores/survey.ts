@@ -2,18 +2,10 @@ import _ from "lodash";
 
 import { persistentAtom } from "@nanostores/persistent";
 
+import type { SurveyItemID, SurveyItem } from "@/types";
+
 import { STORE_PARSER } from "@stores/_constants";
-
-import dataSurveyItems from "public/data/survey.json";
-
-export type SurveyItemID = string;
-
-export type SurveyItem = {
-  id: SurveyItemID;
-  label: string;
-  options: Array<string>;
-  description?: string | null;
-};
+import { surveyStore } from "@stores/data";
 
 export type SurveyReplyItem = {
   id: SurveyItemID;
@@ -21,12 +13,6 @@ export type SurveyReplyItem = {
 };
 
 // Store Management
-export const surveyStore = persistentAtom<Array<SurveyItem>>(
-  "survey:",
-  dataSurveyItems,
-  STORE_PARSER,
-);
-
 export const surveyReplyStore = persistentAtom<Array<SurveyReplyItem>>(
   "surveyReply:",
   surveyStore

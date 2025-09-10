@@ -8,10 +8,10 @@
   @apply text-white;
 }
 
-.button span.cutout {
+.button span.inner {
   @apply relative flex items-center rounded-md bg-white px-5 py-2.5 transition-all duration-75 ease-in;
 }
 
-.button:hover span.cutout {
+.button:hover span.inner {
   @apply bg-white/0;
 }

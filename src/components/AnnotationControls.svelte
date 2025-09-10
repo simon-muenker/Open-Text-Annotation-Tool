@@ -7,17 +7,17 @@
   } from "@stores/annotation";
 </script>
 
-<div class="mt-4 flex justify-center gap-2">
+<div class="flex justify-center gap-2">
   <button class="button" onclick={previousActiveAnnotationItem}>
-    <span class="cutout">
+    <span class="inner">
       <Icon icon="mdi:arrow-left" class="mr-2 -ml-1.5 inline-block h-6 w-6" />
-      Previous Post
+      Previous Sample
     </span>
   </button>
 
   <button class="button" onclick={nextActiveAnnotationItem}>
-    <span class="cutout">
-      Next Post
+    <span class="inner">
+      Next Sample
       <Icon icon="mdi:arrow-right" class="-mr-1.5 ml-2 inline-block h-6 w-6" />
     </span>
   </button>

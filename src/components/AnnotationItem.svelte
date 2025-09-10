@@ -1,13 +1,12 @@
 <script lang="ts">
-  import {
-    type SampleID,
-    type Annotation,
-    getAnnotationReply,
-    setAnnotationReply,
-  } from "@stores/annotation";
+  import type { SampleID, AnnotationItem } from "@/types";
 
-  let { sampleID, annotation }: { sampleID: SampleID; annotation: Annotation } =
-    $props();
+  import { getAnnotationReply, setAnnotationReply } from "@stores/annotation";
+
+  let {
+    sampleID,
+    annotation,
+  }: { sampleID: SampleID; annotation: AnnotationItem } = $props();
   let response: string = $state(
     getAnnotationReply(sampleID, annotation.id).response,
   );

@@ -1,16 +1,17 @@
 <script lang="ts">
-  import {
-    type SurveyItem,
-    getSurveyReply,
-    setSurveyReply,
-  } from "@stores/survey";
+  import type { SurveyItem } from "@/types";
+  import { getSurveyReply, setSurveyReply } from "@stores/survey";
 
   let { id, label, options, description = undefined }: SurveyItem = $props();
   let response: string = $state(getSurveyReply(id).response);
 </script>
 
 <div>
-  <label for={id} class="mb-2 block font-medium text-slate-700">{label}</label>
+  <label
+    for={id}
+    class="mb-2 block h-auto font-medium text-slate-700 md:h-[3lh]"
+    >{label}</label
+  >
   <select
     {id}
     bind:value={response}
@@ -24,7 +25,7 @@
       <option value={option}>{option}</option>
     {/each}
   </select>
-  {#if description != undefined}
+  {#if description != ""}
     <span class="mt-4 block text-sm">
       {description}
     </span>

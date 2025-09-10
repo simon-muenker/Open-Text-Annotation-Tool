@@ -1,30 +1,15 @@
 import { computed } from "nanostores";
 import { persistentAtom } from "@nanostores/persistent";
 
+import type {
+  SampleID,
+  AnnotationID,
+  SampleItem,
+  AnnotationItem,
+} from "@/types";
+
 import { STORE_PARSER } from "@stores/_constants";
-
-import dataAnnotations from "public/data/annotation.json";
-import dataSamples from "public/data/samples.json";
-
-export type SampleID = string;
-export type AnnotationID = string;
-
-export type Feature = {
-  label: string;
-  content: string | number;
-};
-
-export type Sample = {
-  id: SampleID;
-  features: Array<Feature>;
-};
-
-export type Annotation = {
-  id: AnnotationID;
-  label: string;
-  options: Array<string>;
-  description?: string | null;
-};
+import { samplesStore, annotationStore } from "@stores/data";
 
 export type AnnotationReplyItem = {
   id: AnnotationID;
@@ -37,18 +22,6 @@ export type SampleAnnotationReplyItem = {
 };
 
 // Store Management
-export const sampleStore = persistentAtom<Array<Sample>>(
-  "samples:",
-  dataSamples,
-  STORE_PARSER,
-);
-
-export const annotationsStore = persistentAtom<Array<Annotation>>(
-  "annotations:",
-  dataAnnotations,
-  STORE_PARSER,
-);
-
 export const activeAnnotationItemStore = persistentAtom<number>(
   "activeAnnotation:",
   0,
@@ -59,9 +32,9 @@ export const annotationReplyStore = persistentAtom<
   Array<SampleAnnotationReplyItem>
 >(
   "annotationReply:",
-  sampleStore.get().map((sItem: Sample) => ({
+  samplesStore.get().map((sItem: SampleItem) => ({
     id: sItem.id,
-    annotations: annotationsStore.get().map((aItem: Annotation) => ({
+    annotations: annotationStore.get().map((aItem: AnnotationItem) => ({
       id: aItem.id,
       response: aItem.options[0],
     })),
@@ -72,8 +45,8 @@ export const annotationReplyStore = persistentAtom<
 // Derived Stores
 export const annotationsStoreActiveItem = computed(
   activeAnnotationItemStore,
-  (index: number): Sample => {
-    return sampleStore.get()[index];
+  (index: number): SampleItem => {
+    return samplesStore.get()[index];
   },
 );
 
@@ -119,6 +92,6 @@ export function previousActiveAnnotationItem(): void {
 export function nextActiveAnnotationItem(): void {
   const val = activeAnnotationItemStore.get();
 
-  if (val < sampleStore.get().length - 1)
+  if (val < samplesStore.get().length - 1)
     activeAnnotationItemStore.set(val + 1);
 }
