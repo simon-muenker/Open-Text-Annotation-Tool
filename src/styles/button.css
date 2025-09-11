@@ -1,7 +1,7 @@
 @import "tailwindcss";
 
 .button {
-  @apply relative mr-2 mb-2 inline-flex cursor-pointer items-center justify-center overflow-hidden rounded-lg bg-gradient-to-br from-lime-300 via-blue-500 to-purple-600 p-0.5 font-medium text-gray-900 focus:ring-4 focus:ring-cyan-200 focus:outline-none;
+  @apply relative inline-flex cursor-pointer items-center justify-center overflow-hidden rounded-lg bg-gradient-to-br from-lime-300 via-blue-500 to-purple-600 p-0.5 font-medium text-gray-900 focus:ring-4 focus:ring-cyan-200 focus:outline-none;
 }
 
 .button:hover {

@@ -25,23 +25,17 @@ export const sectionsStore = computed(dataStore, (data: Data): Sections => {
   return data.sections;
 });
 
-export const surveyStore = computed(
-  dataStore,
-  (data: Data): Array<SurveyItem> => {
-    return data.survey;
-  },
-);
+export const surveyStore = computed(dataStore, (data: Data): SurveyItem[] => {
+  return data.survey;
+});
 
 export const annotationStore = computed(
   dataStore,
-  (data: Data): Array<AnnotationItem> => {
+  (data: Data): AnnotationItem[] => {
     return data.annotation;
   },
 );
 
-export const samplesStore = computed(
-  dataStore,
-  (data: Data): Array<SampleItem> => {
-    return data.samples;
-  },
-);
+export const samplesStore = computed(dataStore, (data: Data): SampleItem[] => {
+  return data.samples;
+});

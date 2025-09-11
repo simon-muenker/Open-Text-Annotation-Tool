@@ -1,0 +1,37 @@
+---
+import { Icon } from "astro-icon/components";
+
+import BaseLayout from "@layouts/BaseLayout.astro";
+
+import SetupPartial from "@pages/partials/Setup.svelte";
+---
+
+<BaseLayout title="Setup - Open Text-Annotation Tool">
+  <div
+    class="mx-auto h-screen max-w-screen-xl overscroll-contain px-4 py-32 lg:flex lg:flex-col lg:items-center"
+  >
+    <h2 class="sectionheading">Welcome to the Open Text-Annotation Tool</h2>
+
+    <p class="sectionparagraph">
+      Please upload an annotation setup for contiuining to the actual program or take a look at a demo. 
+    </p>
+
+    <div class="h-8"></div>
+
+    <SetupPartial client:load />
+
+    <div class="h-12"></div>
+
+    <footer class="text-sm leading-relaxed text-slate-500">
+      <a href="https://github.com/simon-muenker/TWONy-micro" target="_blank">
+        <Icon name="mdi:github" class="-mt-0.5 inline text-base" />
+        Github
+      </a>
+      ·
+      <a href="https://linkedin.com/in/simon-muenker" target="_blank">
+        <Icon name="mdi:linkedin" class="-mt-0.5 inline text-base" />
+        Simon Münker
+      </a>
+    </footer>
+  </div>
+</BaseLayout>

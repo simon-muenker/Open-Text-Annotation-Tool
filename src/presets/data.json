@@ -1,8 +1,8 @@
 {
   "sections": {
     "hero": {
-      "title": "Social Sentiment during the Energy Crisis: Analyzing Human-Machine Agreement",
-      "introduction": "Our research interest is to analyze the agreement of text classification between human annotators and large language models (LLM) questioned through prompting. Thus, your task in the survey is annotating Tweets in terms of their topic and sentiment. In addition, we encourage you to provide us with selected socio-demographic features. We will utilize these to analyze if the LLM's response resembles the opinion of specific groups."
+      "title": "Open-Text-Annotation-Tool: Demo Survey and Annotation Data",
+      "introduction": "The following showcases demo data for this configurable web interface. To upload a custom data visit the subpage '/setup'"
     },
     "survey": {
       "headline": "Step 1: Fill in your socio-demographic details",
