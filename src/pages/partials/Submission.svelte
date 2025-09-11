@@ -1,11 +1,18 @@
 <script lang="ts">
   import { downloadAsJSON } from "@common/json";
 
+  import { sectionsStore } from "@stores/data";
   import { surveyReplyStore } from "@stores/survey";
   import { annotationReplyStore } from "@stores/annotation";
-
-  let { uploadUrl }: { uploadUrl: string } = $props();
 </script>
+
+<h2 class="sectionheading">
+  {$sectionsStore.submission.headline}
+</h2>
+
+<p class="sectionparagraph">
+  {$sectionsStore.submission.description}
+</p>
 
 <button
   id="downloadData"
@@ -21,6 +28,6 @@
 
 <a
   class="ml-4 text-gray-600 underline underline-offset-8"
-  href={uploadUrl}
+  href={$sectionsStore.submission.uploadUrl}
   target="_blank">2. Upload to Cloud</a
 >

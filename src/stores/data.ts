@@ -11,7 +11,7 @@ import type {
 
 import { STORE_PARSER } from "@stores/_constants";
 
-import exampleData from "public/example.json";
+import exampleData from "@presets/data.json";
 
 // Store Management
 export const dataStore = persistentAtom<Data>(

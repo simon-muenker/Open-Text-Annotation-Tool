@@ -1,66 +1,22 @@
 ---
-import { sectionsStore } from "@/stores/data";
-
 import BaseLayout from "@layouts/BaseLayout.astro";
-import Hero from "@layouts/partials/Hero.astro";
 
-import Survey from "@/components/Survey.svelte";
-import Annotation from "@/components/Annotation.svelte";
-import Submission from "@/components/Submission.svelte";
+import Hero from "@pages/partials/Hero.svelte";
+import Survey from "@pages/partials/Survey.svelte";
+import Annotation from "@pages/partials/Annotation.svelte";
+import Submission from "@pages/partials/Submission.svelte";
 ---
 
 <BaseLayout title="Open Text-Annotation Tool">
-  <Hero>
-    <Fragment slot="headline">
-      {sectionsStore.get().hero.title}
-    </Fragment>
-    <Fragment slot="intro">
-      {sectionsStore.get().hero.introduction}
-    </Fragment>
-  </Hero>
+  <Hero client:load />
   <main class="container mx-auto px-4 py-8 lg:py-12">
-    <h2 class="sectionheading">
-      {sectionsStore.get().survey.headline}
-    </h2>
-
-    <p class="sectionparagraph">
-      {sectionsStore.get().survey.description}
-      <br />
-      <span class="text-sky-800 italic">
-        E-Mail:
-        <a href={"mailto:" + sectionsStore.get().survey.contactMail}>
-          {sectionsStore.get().survey.contactMail}
-        </a>
-      </span>
-    </p>
-
     <Survey client:load />
 
     <hr class="divider" />
 
-    <h2 class="sectionheading">
-      {sectionsStore.get().annotation.headline}
-    </h2>
-
-    <p class="sectionparagraph">
-      {sectionsStore.get().annotation.description}
-    </p>
-
     <Annotation client:load />
 
     <hr class="divider" />
-
-    <h2 class="sectionheading">
-      {sectionsStore.get().submission.headline}
-    </h2>
-
-    <p class="sectionparagraph">
-      {sectionsStore.get().submission.description}
-    </p>
-
-    <Submission
-      uploadUrl={sectionsStore.get().submission.uploadUrl}
-      client:load
-    />
+    <Submission client:load />
   </main>
 </BaseLayout>

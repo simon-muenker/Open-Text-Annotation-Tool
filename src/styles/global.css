@@ -1,9 +1,7 @@
 @import "tailwindcss";
 @plugin "@tailwindcss/forms";
 
+@import "@styles/utility.css";
+
 @import "@styles/typography.css";
 @import "@styles/button.css";
-
-.gradient {
-  @apply bg-gradient-to-br from-lime-300 via-blue-500 to-purple-600;
-}

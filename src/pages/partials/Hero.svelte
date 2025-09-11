@@ -1,6 +1,16 @@
----
-import { Icon } from "astro-icon/components";
----
+<script lang="ts">
+  import Icon from "@iconify/svelte";
+
+  import { sectionsStore } from "@stores/data";
+
+  function scrollDown() {
+    window.scrollTo({
+      top: window.innerHeight,
+      left: 0,
+      behavior: "smooth",
+    });
+  }
+</script>
 
 <header class="bg-gray-900 text-white">
   <div
@@ -10,20 +20,20 @@ import { Icon } from "astro-icon/components";
       <h1
         class="gradient bg-clip-text py-2 text-3xl font-extrabold text-transparent md:text-5xl lg:text-6xl 2xl:text-8xl"
       >
-        <slot name="headline" />
+        {$sectionsStore.hero.title}
       </h1>
 
       <p class="mx-auto max-w-4xl py-4 leading-relaxed md:text-xl">
-        <slot name="intro" />
+        {$sectionsStore.hero.introduction}
       </p>
 
       <div class="flex flex-wrap justify-center gap-4 py-8">
         <button
           class="gradient block w-auto rounded-full p-4 text-white"
-          id="startSurvey"
+          onclick={() => scrollDown()}
         >
           <Icon
-            name="mdi:arrow-down"
+            icon="mdi:arrow-down"
             class="inline-block h-10 w-11 align-text-top"
           />
         </button>
@@ -31,17 +41,3 @@ import { Icon } from "astro-icon/components";
     </div>
   </div>
 </header>
-
-<script>
-  const button = document.getElementById("startSurvey");
-
-  if (button != null) {
-    button.addEventListener("click", () => {
-      window.scrollTo({
-        top: window.innerHeight,
-        left: 0,
-        behavior: "smooth",
-      });
-    });
-  }
-</script>

@@ -1,0 +1,5 @@
+@import "tailwindcss";
+
+.gradient {
+  @apply bg-gradient-to-br from-lime-300 via-blue-500 to-purple-600;
+}

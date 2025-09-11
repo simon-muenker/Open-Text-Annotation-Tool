@@ -16,7 +16,6 @@
     "@nanostores/persistent": "^1.1.0",
     "@tailwindcss/vite": "^4.1.13",
     "astro": "^5.13.5",
-    "astro-icon": "^1.1.5",
     "file-saver": "^2.0.5",
     "lodash": "^4.17.21",
     "nanostores": "^0.11.4",
