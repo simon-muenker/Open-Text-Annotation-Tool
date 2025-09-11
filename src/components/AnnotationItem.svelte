@@ -25,7 +25,7 @@
     bind:value={response}
     onchange={() => setAnnotationReply(sampleID, annotation.id, response)}
     class="
-      inline-flex w-auto rounded-lg border-2 text-left shadow-md
+      inline-flex w-auto rounded-lg border-2 text-left shadow-md cursor-pointer
       {response != annotation.options[0]
       ? 'border-emerald-500'
       : 'border-transparent'}

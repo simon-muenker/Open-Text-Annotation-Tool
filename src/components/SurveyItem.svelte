@@ -17,7 +17,7 @@
     bind:value={response}
     onchange={() => setSurveyReply(id, response)}
     class="
-      inline-flex w-auto rounded-lg border-2 text-left shadow-md
+      inline-flex w-auto rounded-lg border-2 text-left shadow-md cursor-pointer
       {response != options[0] ? 'border-emerald-500' : 'border-transparent'}
     "
   >

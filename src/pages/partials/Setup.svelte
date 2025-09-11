@@ -17,7 +17,7 @@
     </label>
     <div>
       <input
-        class="block w-full rounded-lg border border-gray-200 text-sm file:me-4 file:border-0 file:bg-gray-50 file:px-4 file:py-3"
+        class="block w-full cursor-pointer rounded-lg border border-gray-200 text-sm shadow-md file:me-4 file:border-0 file:bg-gray-50 file:px-4 file:py-3"
         id="data_upload"
         type="file"
         accept=".json"

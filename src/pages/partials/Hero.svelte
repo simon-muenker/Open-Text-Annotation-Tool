@@ -18,7 +18,7 @@
   >
     <div class="mx-auto max-w-7xl text-center">
       <h1
-        class="gradient bg-clip-text py-2 text-3xl font-extrabold text-transparent md:text-5xl lg:text-6xl 2xl:text-8xl"
+        class="gradient bg-clip-text py-2 text-4xl font-extrabold text-transparent md:text-5xl lg:text-6xl 2xl:text-8xl"
       >
         {$sectionsStore.hero.title}
       </h1>
@@ -29,7 +29,7 @@
 
       <div class="flex flex-wrap justify-center gap-4 py-8">
         <button
-          class="gradient block w-auto rounded-full p-4 text-white"
+          class="gradient cursor-pointer block w-auto rounded-full p-4 text-white hover:animate-pulse"
           onclick={() => scrollDown()}
         >
           <Icon
